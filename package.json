@@ -1,0 +1,21 @@
+{
+  "name": "ticketcreatorforautomation",
+  "version": "1.0.0",
+  "description": "Application for creating Excel file for rounding",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Kyiem Chandler",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.1",
+    "jsontoxml": "^1.0.1",
+    "nodemon": "^3.1.7",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
