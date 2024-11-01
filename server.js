@@ -19,7 +19,9 @@ app.get("/WR", (req, res) => {
 app.post("/contact", (req, res) => {
   res.status(200).json({ message: "Data received" });
 
-  data = req.body;
+  data = [
+    req.body
+  ];
 
   var site = data.Site;
   var sheetCreated = false;
