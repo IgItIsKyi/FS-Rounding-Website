@@ -17,7 +17,7 @@ The **FS Rounding Website** is a web application designed for rounding services,
 - **Rounding Functions**: Quickly input form to excel shet made to go into Rounding Automation.
 - **Intuitive UI**: Easy-to-navigate interface with clear instructions.
 - **Responsiveness**: Designed to work on desktop and mobile devices.
-- **Instant Calculations**: Real-time rounding results as you type.
+- **Instant Form Creation**: Builds your excel sheet for the automation as you round.
 
 ## Tech Stack
 
