@@ -32,8 +32,23 @@
             <!------Input Ticket Form ---->
       <form action="">
         <div class="mx-auto p-3">
-          <label for="siteInp" class="form-label">Site</label>
-          <input type="text" class="form-control" id="siteInp" placeholder="What floor or suite you found the issue" required>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Site
+            </button>
+            <ul class="dropdown-menu">
+              <select id="siteInp">
+                <option value="PBH">PBH</option>
+                <option value="CCMC">CCMC</option>
+                <option value="HRMC">HRMC</option>
+                <option value="GTWY">GTWY</option>
+                <option value="CORP">CORP</option>
+                <option value="HFBC">HFBC</option>
+                <option value="VH">VH</option>
+                <option value="CCH">CCH</option>
+              </select>
+            </ul>
+          </div>
         </div>
         <div class="mx-auto p-3">
           <label for="areaInp" class="form-label">Area</label>
@@ -70,6 +85,10 @@
       </form>
           <!-----End of Ticket Form ----->
       <script>
+        // Assign site value
+        var e = document.getElementById("siteInp");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
 
         // Assign values from front end
         var button = document.querySelector("#sub-btn");
