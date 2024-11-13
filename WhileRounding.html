@@ -30,50 +30,58 @@
       </div>
     </nav>
             <!------Input Ticket Form ---->
-      <form action="">
+      <form action="" style="margin: auto 10%;">
+        <!--------- Site Selection   ----->
         <div class="mx-auto p-3">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Site
-            </button>
-            <ul class="dropdown-menu">
-              <select id="siteInp">
-                <option value="PBH">PBH</option>
-                <option value="CCMC">CCMC</option>
-                <option value="HRMC">HRMC</option>
-                <option value="GTWY">GTWY</option>
-                <option value="CORP">CORP</option>
-                <option value="HFBC">HFBC</option>
-                <option value="VH">VH</option>
-                <option value="CCH">CCH</option>
-              </select>
-            </ul>
-          </div>
+          <label for="siteInp" class="form-label">Site</label>
+          <select id="siteInp" class="form-select">
+            <option value="PBH">PBH</option>
+            <option value="CCMC">CCMC</option>
+            <option value="HRMC">HRMC</option>
+            <option value="GTWY">GTWY</option>
+            <option value="CORP">CORP</option>
+            <option value="HFBC">HFBC</option>
+            <option value="VH">VH</option>
+            <option value="CCH">CCH</option>
+          </select>
         </div>
+        <!---- End of Site Selection ----->
+        <!--------- Area Input  ---------->
         <div class="mx-auto p-3">
           <label for="areaInp" class="form-label">Area</label>
           <input type="text" class="form-control" id="areaInp" placeholder="What floor or suite you found the issue" required>
         </div>
+        <!-------End of Area Input ------->
+        <!---------- UID Input  ---------->
         <div class="mx-auto p-3">
           <label for="CUID" class="form-label">Customer UID</label>
           <input type="text" class="form-control" id="CUID" placeholder="Customer's UID goes here" required>
         </div>
+        <!------- End of UID Input  ------>
+        <!------ Summary Input  ---------->
         <div class="mx-auto p-3">
           <label for="ticketSum" class="form-label">Summary</label>
           <input type="text" class="form-control" id="ticketSum" placeholder="Title of the ticket (general issue)" required>
         </div>
+        <!---- End of Summary Input ------>
+        <!---- Description Input  -------->
         <div class="mx-auto p-3">
           <label for="ticketDesc" class="form-label">Description</label>
           <input type="text" class="form-control" id="ticketDesc" placeholder="Give some detail of the issue" required>
         </div>
+        <!----- End of Description Input ---->
+        <!----------- Notes Input ----------->
         <div class="mx-auto p-3">
           <label for="ticketNotes" class="form-label">Notes</label>
           <input type="text" class="form-control" id="ticketNotes" placeholder="Input what you did to fix or troubleshoot" required>
         </div>
+        <!----- End of Notes Input  -------->
+        <!--------- Status Input  ---------->
         <div class="mx-auto p-3">
           <label for="finalStatus" class="form-label">Status</label>
           <input type="text" class="form-control" id="finalStatus" placeholder="Resolved (Incident), Fulfilled (Request) or In Progress?" required>
         </div>
+        <!------ End of Status Input  ------>
         <div class="mx-auto p-3">
           <label for="OUID" class="form-label">Owner ID</label>
           <input type="text" class="form-control" id="OUID" placeholder="Enter your UID" required>
