@@ -7,7 +7,10 @@ var app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  
+}));
 
 // Endpoint to read and return the Excel file data
 app.get("/", (req, res) => {
