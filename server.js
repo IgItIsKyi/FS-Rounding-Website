@@ -8,8 +8,9 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: "*",
-  
+  origin: 'https://fs-rounding-website.onrender.com',
+  methods: 'GET, POST',
+  allowedHeaders: 'Content-Type',
 }));
 
 // Endpoint to read and return the Excel file data
