@@ -1,6 +1,9 @@
 // server.js
 const express = require("express");
 const XLSX = require("xlsx");
+const cors = require('cors');
+app.use(cors());
+
 
 
 var app = express();
