@@ -127,7 +127,7 @@
           console.log(data);
 
           // Send data to the server
-          fetch("/contact", {
+          fetch("/WR", {
             method: "POST",
             headers: {
               "Content-type": "application/json"
@@ -135,13 +135,15 @@
             body: JSON.stringify(data)
           })
           .then(response => {
+            console.log("HTTP status:", response.status);
             if (!response.ok) {
               throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
           })
           .then(data => console.log("Server response:", data))
-          .catch(error => console.error("Error:", error));
+          .catch(error => console.error("Error", error));
+
         });
 
       </script>

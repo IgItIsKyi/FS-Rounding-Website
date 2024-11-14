@@ -1,14 +1,18 @@
 // server.js
+const PORT = process.env.PORT || 3000;
+
 const express = require("express");
 const XLSX = require("xlsx");
 const cors = require('cors');
 
 var app = express();
 app.use(express.json());
-const PORT = process.env.PORT || 3000;
+
+
+
 
 app.use(cors({
-  origin: 'https://fs-rounding-website.onrender.com',
+  origin: '*',
   methods: 'GET, POST',
   allowedHeaders: 'Content-Type',
 }));
@@ -22,14 +26,17 @@ app.get("/WR", (req, res) => {
     res.sendFile("WhileRounding.html", {root: __dirname });
 })
 
-app.post("/contact", (req, res) => {
-  res.status(200).json({ message: "Data received" });
+app.post("/WR", (req, res) => {
+  
 
-  data = [
-    req.body
-  ];
+  data = req.body;
+
+  console.log(data)
+
 
   var site = data.Site;
+
+  console.log("Site", site)
   var sheetCreated = false;
   console.log("data: ", data)
 
@@ -51,11 +58,15 @@ app.post("/contact", (req, res) => {
   
   if(sheetCreated == false) {
       console.log("Sheet not found. Creating sheet...")
-  
+      jdata = [
+        data
+      ]
       // convert JSON to worksheet
-      var worksheet = XLSX.utils.json_to_sheet(data);
+      var worksheet = XLSX.utils.json_to_sheet(jdata);
       XLSX.utils.book_append_sheet(workbook, worksheet, site);
       XLSX.writeFile(workbook, "Test.xlsx")
+
+      console.log("Sheet ", site, " added.")
   
   } else {
       console.log("Sheet was already created. Pushing to next row")
@@ -190,6 +201,7 @@ app.post("/contact", (req, res) => {
         console.log("Row added to CCH sheet successfully...")
       }
   }
+  return res.sendStatus(201);
 })
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
