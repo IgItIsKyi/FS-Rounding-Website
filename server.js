@@ -55,7 +55,7 @@ app.post("/WR", (req, res) => {
   var sheetCreated = false;
   console.log("data: ", data)
 
-  const workbook = XLSX.readFile("Test.xlsx");
+  const workbook = XLSX.readFile("public/Test.xlsx");
   // Convert XLSX to JSON
   let worksheets = {};
   for (const sheetName of workbook.SheetNames) {
