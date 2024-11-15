@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 // Download excel file
 app.get('/download-excel', (req, res) => {
   const filePath = path.join(__dirname, 'public', 'Test.xlsx');
-  res.send("File path made for excel: ", filePath)
+  console.log("Excel file path:", filePath)
   res.download(filePath, 'Test.xlsx', (err) => {
       if (err) {
           console.error('Error downloading file:', err);
