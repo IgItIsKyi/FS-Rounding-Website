@@ -4,13 +4,14 @@ const PORT = process.env.PORT || 3000;
 const express = require("express");
 const XLSX = require("xlsx");
 const cors = require('cors');
+const path = require('path');
 
 var app = express();
 app.use(express.json());
 
 
 
-
+// Access headers
 app.use(cors({
   origin: '*',
   methods: 'GET, POST',
@@ -22,10 +23,23 @@ app.get("/", (req, res) => {
   res.sendFile("index.html", { root: __dirname });
 });
 
+// Download excel file
+app.get('/download-excel', (req, res) => {
+  const filePath = path.join(__dirname, 'public', 'Test.xlsx');
+  res.download(filePath, 'Test.xlsx', (err) => {
+      if (err) {
+          console.error('Error downloading file:', err);
+          res.status(500).send('File not found');
+      }
+  });
+});
+
+// Display While Rounding Page
 app.get("/WR", (req, res) => {
     res.sendFile("WhileRounding.html", {root: __dirname });
 })
 
+// Post form to send to excel file
 app.post("/WR", (req, res) => {
   
 
