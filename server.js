@@ -79,7 +79,7 @@ app.post("/WR", (req, res) => {
       // convert JSON to worksheet
       var worksheet = XLSX.utils.json_to_sheet(jdata);
       XLSX.utils.book_append_sheet(workbook, worksheet, site);
-      XLSX.writeFile(workbook, "Test.xlsx")
+      XLSX.writeFile(workbook, "public/Test.xlsx")
 
       console.log("Sheet ", site, " added.")
   
@@ -98,7 +98,7 @@ app.post("/WR", (req, res) => {
             "Owner": data.OwnerID
           });
           XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.PBH)
-          XLSX.writeFile(workbook, "Test.xlsx")
+          XLSX.writeFile(workbook, "public/Test.xlsx")
           console.log("Row added to PBH sheet successfully...")
       }
   
@@ -115,7 +115,7 @@ app.post("/WR", (req, res) => {
             "Owner": data.OwnerID
           });
           XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.CCMC)
-          XLSX.writeFile(workbook, "Test.xlsx")
+          XLSX.writeFile(workbook, "public/Test.xlsx")
           console.log("Row added to CCMC sheet successfully...")
       }
   
@@ -131,7 +131,7 @@ app.post("/WR", (req, res) => {
           "Owner": data.OwnerID
         });
         XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.HRMC)
-        XLSX.writeFile(workbook, "Test.xlsx")
+        XLSX.writeFile(workbook, "public/Test.xlsx")
         console.log("Row added to HRMC sheet successfully...")        
   
       }
@@ -149,7 +149,7 @@ app.post("/WR", (req, res) => {
           "Owner": data.OwnerID
         });
         XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.GTWY)
-        XLSX.writeFile(workbook, "Test.xlsx")
+        XLSX.writeFile(workbook, "public/Test.xlsx")
         console.log("Row added to GTWY sheet successfully...")
       }
   
@@ -165,7 +165,7 @@ app.post("/WR", (req, res) => {
           "Owner": data.OwnerID
         });
         XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.CORP)
-        XLSX.writeFile(workbook, "Test.xlsx")
+        XLSX.writeFile(workbook, "public/Test.xlsx")
         console.log("Row added to CORP sheet successfully...")
       }  
   
@@ -181,7 +181,7 @@ app.post("/WR", (req, res) => {
           "Owner": data.OwnerID
         });
         XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.HFBC)
-        XLSX.writeFile(workbook, "Test.xlsx")
+        XLSX.writeFile(workbook, "public/Test.xlsx")
         console.log("Row added to HFBC sheet successfully...")
       }
   
@@ -197,7 +197,7 @@ app.post("/WR", (req, res) => {
           "Owner": data.OwnerID
         });
         XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.VH)
-        XLSX.writeFile(workbook, "Test.xlsx")
+        XLSX.writeFile(workbook, "public/Test.xlsx")
         console.log("Row added to VH sheet successfully...")
       }
       if(site == "CCH"){
@@ -212,7 +212,7 @@ app.post("/WR", (req, res) => {
           "Owner": data.OwnerID
         });
         XLSX.utils.sheet_add_json(workbook.Sheets[site], worksheets.CCH)
-        XLSX.writeFile(workbook, "Test.xlsx")
+        XLSX.writeFile(workbook, "public/Test.xlsx")
         console.log("Row added to CCH sheet successfully...")
       }
   }
